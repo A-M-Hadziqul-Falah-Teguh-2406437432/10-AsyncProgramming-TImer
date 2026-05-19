@@ -96,6 +96,9 @@ fn main() {
         println!("Hadziqul Falah: done!");
     });
 
+    // Modification for Experiment 1.2
+    println!("Hadziqul Falah: hey hey");
+
     drop(spawner);
 
     executor.run();
