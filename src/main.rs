@@ -96,10 +96,22 @@ fn main() {
         println!("Hadziqul Falah: done!");
     });
 
-    // Modification for Experiment 1.2
+    spawner.spawn(async {
+        println!("Hadziqul Falah: howdy 2!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Hadziqul Falah: done 2!");
+    });
+
+    spawner.spawn(async {
+        println!("Hadziqul Falah: howdy 3!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Hadziqul Falah: done 3!");
+    });
+
     println!("Hadziqul Falah: hey hey");
 
-    drop(spawner);
+    // Experiment 1.3: Commenting out drop(spawner)
+    // drop(spawner);
 
     executor.run();
 }
